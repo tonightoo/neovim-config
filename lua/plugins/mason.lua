@@ -16,7 +16,7 @@ return {
 			},
 		})
 
-		lspconfig.lus_ls.setup({})
+		lspconfig.lua_ls.setup({})
 		lspconfig.csharp_ls.setup({})
 		lspconfig.marksman.setup({})
 	end
