@@ -1,3 +1,3 @@
-require("options")
-require("keymaps")
-require("loadlazy")
+require('options')
+require('keymaps')
+require('loadlazy')
