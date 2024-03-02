@@ -13,3 +13,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
+-- set colorscheme after loading all colorschemes
+vim.cmd[[colorscheme everforest]]
