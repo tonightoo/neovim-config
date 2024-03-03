@@ -21,6 +21,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.fileencodings = 'utf-8'
 vim.opt.fileformats = {'unix', 'dos', 'mac'}
-vim.opt.guifont = 'Cica:h20'
+if vim.fn.has('win64') == 1 then
+	vim.opt.guifont = 'Hack Nerd Font Mono:h14'
+elseif vim.fn.has('wsl') then
+	vim.opt.guifont = 'Hack Nerd Font Mono:h18'
+end
 vim.opt.mouse = 'a'
 vim.opt.winblend = 5
