@@ -53,4 +53,9 @@ return {
 			require('nord').set()
 		end
 	},
+	{
+		'EdenEast/nightfox.nvim',
+		lazy = false,
+		priority = 1000,
+	}
 }
