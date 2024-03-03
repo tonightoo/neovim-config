@@ -9,6 +9,7 @@ return {
 		dependencies = {
 			{ 'williamboman/mason.nvim' },
 			{ 'neovim/nvim-lspconfig' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
 		},
 		config = function()
 			local mason = require('mason')
@@ -19,7 +20,9 @@ return {
 			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
 				function(server_name)
-					lspconfig[server_name].setup({})
+					lspconfig[server_name].setup({
+						capabilities = require('cmp_nvim_lsp').default_capabilities()
+					})
 				end
 			})
 
@@ -27,10 +30,10 @@ return {
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 				callback = function(ev)
-					vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+					-- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 					local opts = { buffer = ev.buf }
-					vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+					-- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 					vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 					vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 					vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
