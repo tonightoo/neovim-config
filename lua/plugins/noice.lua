@@ -7,7 +7,7 @@ return {
 		'MunifTanjim/nui.nvim',
 		'rcarriga/nvim-notify',
 	},
-	config = function ()
+	config = function()
 		require('noice').setup({
 			cmdline = {
 				view = 'cmdline',
